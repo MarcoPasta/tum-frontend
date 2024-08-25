@@ -9,3 +9,20 @@
   @tailwind components;
   @tailwind utilities;
 }
+
+/* @font-face {
+  font-family: "pixeled";
+  src: url("assets/font/Pixeled.ttf") format("opentype");
+}
+
+* {
+  font-family: "pixeled", sans-serif;
+} */
+
+// custom tabmenu bar color
+.p-tabmenu .p-tabmenu-nav .p-menuitem-link {
+}
+
+// custom active tabmenu bar color
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
+}

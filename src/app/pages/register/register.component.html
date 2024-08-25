@@ -1,0 +1,46 @@
+<p>register works!</p>
+
+<div class="tw-m-5">
+  <h1 class="tw-text-3xl tw-font-bold">Register for !TUM</h1>
+  <div class="tw-py-10 tw-flex tw-flex-wrap tw-gap-4">
+    <input
+      class="tw-basis-1/2"
+      id="handle"
+      type="text"
+      pInputText
+      [(ngModel)]="handleInput"
+      placeholder="Handle"
+    />
+
+    <input
+      class="tw-basis-1/2"
+      id="Group"
+      type="text"
+      pInputText
+      [(ngModel)]="groupInput"
+      placeholder="Group"
+    />
+
+    <p-dropdown
+      [options]="countries"
+      [(ngModel)]="selectedCountry"
+      optionLabel="name"
+      placeholder="Select a Country"
+    >
+      <ng-template pTemplate="selectedItem">
+        @if(selectedCountry) {
+        <div class="tw-flex tw-items-center tw-gap-2">
+          <span [class]="getCountryFlag(selectedCountry.code)"></span>
+          <div>{{ selectedCountry.name }}</div>
+        </div>
+        }
+      </ng-template>
+      <ng-template let-country pTemplate="item">
+        <div class="tw-flex tw-items-center tw-gap-2">
+          <span [class]="getCountryFlag(country.code)"></span>
+          <div>{{ country.name }}</div>
+        </div>
+      </ng-template>
+    </p-dropdown>
+  </div>
+</div>
