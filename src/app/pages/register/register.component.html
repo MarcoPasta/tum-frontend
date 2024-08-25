@@ -42,5 +42,14 @@
         </div>
       </ng-template>
     </p-dropdown>
+    <p-button label="Submit" (onClick)="handleSubmit()"></p-button>
   </div>
+
+  @for (item of visitors; track $index) {
+  <div>
+    <span [class]="getCountryFlag(item.country)" class="tw-px-1"></span>
+    <span class="tw-px-1 tw-pl-2">{{ item.handle }}</span>
+    <span class="tw-px-1">{{ item.group }}</span>
+  </div>
+  }
 </div>
