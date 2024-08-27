@@ -70,16 +70,21 @@ export class RegisterComponent implements OnInit {
     let visitor: RegisterObject = { handle: '', group: '', country: '' };
 
     if (this.handleInput !== undefined && this.handleInput !== null) {
+      console.log(this.handleInput);
       visitor.handle = this.handleInput;
     }
     if (this.groupInput !== undefined && this.groupInput !== null) {
+      this.groupInput;
       visitor.group = this.groupInput;
     }
     if (this.selectedCountry !== undefined && this.selectedCountry !== null) {
+      this.selectedCountry;
       visitor.country = this.selectedCountry.code;
     }
 
-    console.log(visitor);
+    if (visitor.group === '') {
+      delete visitor['group'];
+    }
     this.registerUser(visitor);
   }
 
