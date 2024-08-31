@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ComposComponent } from './pages/compos/compos.component';
 import { TimetableComponent } from './pages/timetable/timetable.component';
 import { TravelComponent } from './pages/travel/travel.component';
+import { DataProtectionComponent } from './pages/data-protection/data-protection.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,4 +19,5 @@ export const routes: Routes = [
   { path: 'travel', component: TravelComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'data-protection', component: DataProtectionComponent },
 ];

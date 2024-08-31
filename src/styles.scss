@@ -23,28 +23,76 @@ body {
   background-color: #1a1f29;
 }
 
-// custom tabmenu bar color
-.p-tabmenu .p-tabmenu-nav .p-menuitem-link {
+// custom menu bar color
+.p-menubar {
   background-color: #1a1f29;
   border-radius: 0;
-  text-color: white;
+  border: none;
 }
 
-.p-tabmenu .p-tabmenu-nav .p-menuitem-link .p-menuitem-text {
+.p-focus {
+}
+
+// all menu bar items
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-content
+  .p-menuitem-link {
+}
+
+// single menu bar items
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-content
+  .p-menuitem-link
+  .p-menuitem-text {
   color: white;
 }
 
-// custom active tabmenu bar color
-.p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
-  background-color: #1a1f29;
-  border-color: #ff8610;
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem:not(.p-highlight):not(.p-disabled)
+  > .p-menuitem-content:hover {
+  color: #4b5563;
+  background: #ff8610;
 }
 
-.p-tabmenu
-  .p-tabmenu-nav
-  .p-tabmenuitem.p-highlight
+// second
+.p-menubar
+  .p-menuitem:not(.p-highlight):not(.p-disabled)
+  > .p-menuitem-content:hover {
+  color: #4b5563;
+  background: #ff8610;
+}
+
+// menu bar items container?
+.p-menubar .p-menuitem.p-highlight > .p-menuitem-content {
+  color: #1d4ed8;
+  background: #ff8610;
+}
+
+// sub menu list
+.p-menubar .p-submenu-list {
+  padding: 0.5rem 0;
+  background: #ffffff;
+  border: 0 none;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  width: 12.5rem;
+  border-radius: 6px;
+}
+
+// sub menu list text color
+.p-menubar .p-menuitem > .p-menuitem-content .p-menuitem-link .p-menuitem-text {
+}
+
+// p menu bar hover
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem:not(.p-highlight):not(.p-disabled)
+  > .p-menuitem-content:hover
   .p-menuitem-link
   .p-menuitem-text {
-  background-color: #1a1f29;
-  color: #ff8610;
+  color: white;
 }
