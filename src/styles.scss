@@ -19,10 +19,32 @@
   font-family: "pixeled", sans-serif;
 } */
 
+body {
+  background-color: #1a1f29;
+}
+
 // custom tabmenu bar color
 .p-tabmenu .p-tabmenu-nav .p-menuitem-link {
+  background-color: #1a1f29;
+  border-radius: 0;
+  text-color: white;
+}
+
+.p-tabmenu .p-tabmenu-nav .p-menuitem-link .p-menuitem-text {
+  color: white;
 }
 
 // custom active tabmenu bar color
 .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
+  background-color: #1a1f29;
+  border-color: #ff8610;
+}
+
+.p-tabmenu
+  .p-tabmenu-nav
+  .p-tabmenuitem.p-highlight
+  .p-menuitem-link
+  .p-menuitem-text {
+  background-color: #1a1f29;
+  color: #ff8610;
 }

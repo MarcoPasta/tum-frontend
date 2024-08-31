@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NgOptimizedImage } from '@angular/common';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ActivatedRoute, Router, RouterState } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
 import { TabMenuModule } from 'primeng/tabmenu';
@@ -7,19 +8,20 @@ import { TabMenuModule } from 'primeng/tabmenu';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [MenubarModule, TabMenuModule],
+  imports: [MenubarModule, TabMenuModule, NgOptimizedImage],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
   items: MenuItem[] = [];
+  activeItem: MenuItem = {} as MenuItem;
 
   constructor(private router: Router) {
     this.items = [
       {
         label: 'HOME',
         icon: 'pi pi-home',
-        target: 'home',
+        target: '',
         items: [],
         command: () => this.router.navigate(['home']),
       },
@@ -33,42 +35,39 @@ export class NavbarComponent {
       {
         label: 'EVENTS',
         icon: 'pi pi-search',
-        target: 'events',
         items: [
           {
-            label: 'Components',
+            label: 'Compos',
             icon: 'pi pi-bolt',
+            target: 'compos',
+            command: () => this.router.navigate(['compos']),
           },
           {
-            label: 'Blocks',
+            label: 'Timetable',
             icon: 'pi pi-server',
-          },
-          {
-            label: 'UI Kit',
-            icon: 'pi pi-pencil',
-          },
-          {
-            label: 'Templates',
-            icon: 'pi pi-palette',
-            items: [
-              {
-                label: 'Apollo',
-                icon: 'pi pi-palette',
-              },
-              {
-                label: 'Ultima',
-                icon: 'pi pi-palette',
-              },
-            ],
+            target: 'compos',
+            command: () => this.router.navigate(['timetable']),
           },
         ],
-        command: () => this.router.navigate(['events']),
       },
       {
         label: 'LOCATION & TRAVEL',
         icon: 'pi pi-envelope',
         target: 'location',
-        command: () => this.router.navigate(['location']),
+        items: [
+          {
+            label: 'Location',
+            icon: '',
+            target: 'location',
+            command: () => this.router.navigate(['location']),
+          },
+          {
+            label: 'Travel',
+            icon: '',
+            target: 'travel',
+            command: () => this.router.navigate(['travel']),
+          },
+        ],
       },
       {
         label: 'CONTACT',
@@ -83,5 +82,19 @@ export class NavbarComponent {
         command: () => this.router.navigate(['register']),
       },
     ];
+
+    const foundItem = this.items.find(
+      (i) => i.target === window.location.pathname.replace('/', '')
+    );
+
+    if (foundItem !== undefined) {
+      this.activeItem = foundItem;
+    } else {
+      this.activeItem = this.items[0];
+    }
+  }
+
+  onChangeActiveItem($event: MenuItem) {
+    this.activeItem = $event;
   }
 }

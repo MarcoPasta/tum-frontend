@@ -28,6 +28,11 @@ export class RegisterComponent implements OnInit {
 
   visitors: Visitors[] = [];
 
+  style = {
+    'background-color': '#ff8610',
+    'border-color': '#ff8610',
+  };
+
   constructor(private laravelService: LaravelService) {
     this.countries = [
       { name: 'Australia', code: 'AU' },
@@ -83,7 +88,7 @@ export class RegisterComponent implements OnInit {
     }
 
     if (visitor.group === '') {
-      delete visitor['group'];
+      visitor = { ...visitor, ['group']: undefined };
     }
     this.registerUser(visitor);
   }
