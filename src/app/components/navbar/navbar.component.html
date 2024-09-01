@@ -1,9 +1,10 @@
-<!-- <p-menubar [model]="items" /> -->
 <div
-  class="tw-flex tw-justify-between tw-items-center tw-border-b-2 tw-h-[58px]"
+  class="tw-flex tw-flex-row-reverse lg:tw-flex-row tw-justify-between tw-items-center tw-border-b-2 tw-h-[58px]"
 >
-  <div class="tw-pl-8">
+  <div class="lg:tw-pl-8 tw-pr-4">
     <img ngSrc="logo.svg" alt="Logo" height="128" width="128" />
   </div>
-  <p-menubar class="" [model]="items"></p-menubar>
+  <div class="tw-grow">
+    <p-menubar class="" [model]="items"></p-menubar>
+  </div>
 </div>

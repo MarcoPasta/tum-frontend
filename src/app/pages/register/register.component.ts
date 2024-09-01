@@ -245,7 +245,6 @@ export class RegisterComponent implements OnInit {
     this.laravelService.getVisitors().subscribe({
       next: (visitors) => {
         this.visitors = visitors;
-        console.log('get', this.visitors);
       },
       error: (err) => {
         console.log('err', err);

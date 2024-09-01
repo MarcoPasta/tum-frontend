@@ -96,3 +96,27 @@ body {
   .p-menuitem-text {
   color: white;
 }
+
+// MOBILE
+@media screen and (max-width: 960px) {
+  .p-menubar .p-menubar-root-list {
+    background-color: #1a1f29;
+  }
+
+  .p-menubar .p-submenu-list {
+    padding: 0.5rem 0;
+    background: #1a1f29;
+    border: 0 none;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    width: 12.5rem;
+    border-radius: 6px;
+  }
+
+  .p-menubar
+    .p-menuitem
+    > .p-menuitem-content
+    .p-menuitem-link
+    .p-menuitem-text {
+    color: white;
+  }
+}
