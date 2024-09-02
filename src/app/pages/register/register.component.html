@@ -54,7 +54,9 @@
     <div>
       <span [class]="getCountryFlag(item.country)" class="tw-px-1"></span>
       <span class="tw-px-1 tw-pl-2 tw-text-[#b4c8db]">{{ item.handle }}</span>
-      <span class="tw-px-1 tw-text-[#b4c8db]">{{ item.group }}</span>
+      @if(item.group !== null) {
+      <span class="tw-px-1 tw-text-[#b4c8db]">{{ "/ " + item.group }}</span>
+      }
     </div>
     }
   </div>
